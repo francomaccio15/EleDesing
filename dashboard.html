@@ -1,0 +1,451 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2e476f",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#321c00",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-fixed-dim": "#aec7f7",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed-dim": "#f1bd81",
+                        "inverse-primary": "#aec7f7",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#d0e1fb",
+                        "outline": "#74777f",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-fixed": "#ffddb9",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#54647a",
+                        "secondary-fixed": "#d3e4fe",
+                        "secondary": "#505f76",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-secondary-fixed": "#0b1c30",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed": "#001b3d",
+                        "background": "#f7f9fb",
+                        "on-primary-container": "#87a0cd",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#44474e",
+                        "primary": "#002046",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed-variant": "#623f0f",
+                        "surface": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#465f88",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1b365d",
+                        "on-tertiary-container": "#c6965e",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#4f2f00",
+                        "on-surface": "#191c1e",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-sm": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-sm": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-0{bottom:0px}.left-0{left:0px}.left-3{left:0.75rem}.left-64{left:16rem}.right-0{right:0px}.right-4{right:1rem}.top-0{top:0px}.top-1\/2{top:50%}.top-4{top:1rem}.z-30{z-index:30}.z-40{z-index:40}.col-span-12{grid-column:span 12 / span 12}.mx-2{margin-left:0.5rem;margin-right:0.5rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-stack-lg{margin-bottom:24px}.mb-stack-md{margin-bottom:16px}.mt-1{margin-top:0.25rem}.mt-stack-lg{margin-top:24px}.mt-stack-md{margin-top:16px}.mt-unit{margin-top:4px}.flex{display:flex}.grid{display:grid}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-48{height:12rem}.h-8{height:2rem}.h-\[1024px\]{height:1024px}.h-full{height:100%}.min-h-\[1024px\]{min-height:1024px}.w-10{width:2.5rem}.w-2{width:0.5rem}.w-64{width:16rem}.w-8{width:2rem}.w-full{width:100%}.w-px{width:1px}.min-w-0{min-width:0px}.max-w-\[1600px\]{max-width:1600px}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-gutter{gap:16px}.gap-stack-sm{gap:8px}.-space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-0.5rem * var(--tw-space-x-reverse));margin-left:calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-gutter > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(16px * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(16px * var(--tw-space-y-reverse))}.space-y-stack-md > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(16px * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(16px * var(--tw-space-y-reverse))}.space-y-stack-sm > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(8px * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(8px * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-outline-variant > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(196 198 207 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.125rem}.rounded-full{border-radius:0.75rem}.rounded-lg{border-radius:0.25rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-none{border-style:none}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-600{--tw-border-opacity:1;border-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity:1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-error\/10{border-color:rgb(186 26 26 / 0.1)}.border-outline{--tw-border-opacity:1;border-color:rgb(116 119 127 / var(--tw-border-opacity, 1))}.border-outline-variant{--tw-border-opacity:1;border-color:rgb(196 198 207 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(0 32 70 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-slate-900{--tw-border-opacity:1;border-color:rgb(15 23 42 / var(--tw-border-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-background{--tw-bg-opacity:1;background-color:rgb(247 249 251 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-blue-600\/20{background-color:rgb(37 99 235 / 0.2)}.bg-blue-600\/30{background-color:rgb(37 99 235 / 0.3)}.bg-blue-600\/40{background-color:rgb(37 99 235 / 0.4)}.bg-blue-600\/50{background-color:rgb(37 99 235 / 0.5)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-error-container{--tw-bg-opacity:1;background-color:rgb(255 218 214 / var(--tw-bg-opacity, 1))}.bg-error-container\/20{background-color:rgb(255 218 214 / 0.2)}.bg-gray-50\/50{background-color:rgb(249 250 251 / 0.5)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(0 32 70 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(27 54 93 / var(--tw-bg-opacity, 1))}.bg-secondary-container{--tw-bg-opacity:1;background-color:rgb(208 225 251 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(242 244 246 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.stroke-blue-200{stroke:#bfdbfe}.stroke-blue-600{stroke:#2563eb}.stroke-slate-100{stroke:#f1f5f9}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-container-padding{padding:24px}.p-stack-md{padding:16px}.p-stack-sm{padding:8px}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-gutter{padding-left:16px;padding-right:16px}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.py-stack-md{padding-top:16px;padding-bottom:16px}.py-stack-sm{padding-top:8px;padding-bottom:8px}.pl-10{padding-left:2.5rem}.pl-64{padding-left:16rem}.pr-4{padding-right:1rem}.pt-16{padding-top:4rem}.text-left{text-align:left}.text-right{text-align:right}.font-\[\'Inter\'\]{font-family:'Inter'}.font-body-md{font-family:Inter}.font-body-sm{font-family:Inter}.font-display-sm{font-family:Inter}.font-h1{font-family:Inter}.font-h2{font-family:Inter}.font-h3{font-family:Inter}.font-label-md{font-family:Inter}.font-label-sm{font-family:Inter}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[16px\]{font-size:16px}.text-\[18px\]{font-size:18px}.text-body-sm{font-size:14px;line-height:20px;font-weight:400}.text-display-sm{font-size:30px;line-height:38px;letter-spacing:-0.02em;font-weight:600}.text-h1{font-size:24px;line-height:32px;letter-spacing:-0.01em;font-weight:600}.text-h2{font-size:20px;line-height:28px;font-weight:600}.text-h3{font-size:18px;line-height:26px;font-weight:600}.text-label-md{font-size:13px;line-height:18px;font-weight:500}.text-label-sm{font-size:12px;line-height:16px;letter-spacing:0.05em;font-weight:600}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-widest{letter-spacing:0.1em}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-error{--tw-text-opacity:1;color:rgb(186 26 26 / var(--tw-text-opacity, 1))}.text-on-error-container{--tw-text-opacity:1;color:rgb(147 0 10 / var(--tw-text-opacity, 1))}.text-on-primary-container{--tw-text-opacity:1;color:rgb(135 160 205 / var(--tw-text-opacity, 1))}.text-on-secondary-container{--tw-text-opacity:1;color:rgb(84 100 122 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(25 28 30 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(0 32 70 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(80 95 118 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-50{opacity:0.5}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.hover\:bg-amber-100:hover{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.hover\:bg-error\/10:hover{background-color:rgb(186 26 26 / 0.1)}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800\/50:hover{background-color:rgb(30 41 59 / 0.5)}.hover\:bg-surface-container-low:hover{--tw-bg-opacity:1;background-color:rgb(242 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-lowest:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-slate-100:hover{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary\/20:focus{--tw-ring-color:rgb(0 32 70 / 0.2)}.active\:opacity-80:active{opacity:0.8}.dark\:border-slate-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.dark\:bg-black:is(.dark *){--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.dark\:text-slate-400:is(.dark *){--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.dark\:hover\:bg-slate-800\/50:hover:is(.dark *){background-color:rgb(30 41 59 / 0.5)}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body class="bg-background font-body-md text-on-surface antialiased" data-mode="connect">
+<!-- Sidebar Shell -->
+<aside class="h-[1024px] w-64 fixed left-0 top-0 z-40 bg-slate-900 dark:bg-black border-r border-slate-800 flex flex-col h-full font-['Inter'] text-sm antialiased" data-stitch-vh="h-[1024px]===h-screen">
+<div class="px-6 py-8">
+<h1 class="text-xl font-black tracking-tight text-white">MaccioTEC</h1>
+<p class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Management Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-slate-800 text-white border-l-4 border-blue-600 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#"></a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="factory">factory</span>
+<span>Production</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-800">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="person">person</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-semibold text-white truncate">Admin User</p>
+<p class="text-[10px] text-slate-500 truncate">admin@macciotec.com</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top App Bar Shell -->
+<header class="h-16 fixed top-0 right-0 left-64 z-30 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center px-6 w-full font-['Inter'] text-sm tracking-wide">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="w-full bg-slate-50 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Buscar pedidos, materiales o clientes..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-px bg-slate-200 mx-2"></div>
+<img alt="User Avatar" class="h-8 w-8 rounded-full border border-slate-200 object-cover" data-alt="close-up portrait of a professional male executive in a corporate setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrBk1y0p-geOiD4wGG6ON7Deu9QMbzzTIQcwI1Xh65XeSUM0D6c6Ezpmito7Ku23uE_4X-gqP7FdF0xaw5fYovKb0sEW41-hCb_31kF52qW7N8EBSvVK9bVSRVRJRa4w-jOMOsq32Nt0sZowSLc8ZPxGwarulwccldCFBtEC5LT7EdkKe2J6qzw91Xf8ND5GJw32Vk2XkquWQfL8j59l9XJbHbPiWjO_7mCtRaUnRVgyYqu2VUcaPYpzzL-G1uzE3bETiNpltN9xY">
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pl-64 pt-16 min-h-[1024px]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+<div class="p-container-padding max-w-[1600px] mx-auto">
+<!-- Dashboard Header -->
+<div class="mb-stack-lg flex justify-between items-end">
+<div>
+<h2 class="font-h1 text-h1 text-primary">Dashboard</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Resumen del sistema de gestión MaccioTEC para el turno actual.</p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="px-4 py-2 bg-white border border-outline-variant font-label-sm text-label-sm text-primary hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                        Exportar Reporte
+                    </button>
+</div>
+</div>
+<!-- Key Metrics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-stack-lg">
+<!-- Total Orders -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Total de Pedidos</p>
+<h3 class="font-display-sm text-display-sm text-primary mt-unit">1.284</h3>
+</div>
+<div class="p-stack-sm bg-secondary-container text-on-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</div>
+</div>
+<div class="mt-stack-md flex items-center gap-2 text-xs font-medium text-emerald-600">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>12.5% vs mes anterior</span>
+</div>
+</div>
+<!-- Active Production -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Producción Activa</p>
+<h3 class="font-display-sm text-display-sm text-primary mt-unit">42</h3>
+</div>
+<div class="p-stack-sm bg-primary-container text-on-primary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+</div>
+<div class="mt-stack-md flex items-center gap-2 text-xs font-medium text-blue-600">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span>8 líneas en funcionamiento</span>
+</div>
+</div>
+<!-- Low Stock Items -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Stock Bajo</p>
+<h3 class="font-display-sm text-display-sm text-error mt-unit">18</h3>
+</div>
+<div class="p-stack-sm bg-error-container text-on-error-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+</div>
+<div class="mt-stack-md flex items-center gap-2 text-xs font-medium text-error">
+<span class="material-symbols-outlined text-sm" data-icon="error">error</span>
+<span>Requiere acción inmediata</span>
+</div>
+</div>
+<!-- Revenue this Month -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Ingresos Mensuales</p>
+<h3 class="font-display-sm text-display-sm text-primary mt-unit">€245.8k</h3>
+</div>
+<div class="p-stack-sm bg-secondary-container text-on-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="mt-stack-md flex items-center gap-2 text-xs font-medium text-emerald-600">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>4.2% incremento</span>
+</div>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Recent Orders Table -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest border border-outline-variant flex flex-col">
+<div class="p-stack-md border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-primary">Pedidos Recientes</h3>
+<button class="text-primary font-label-sm text-label-sm hover:underline">Ver todos</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-gutter py-stack-sm font-label-sm text-label-sm text-secondary border-b border-outline-variant">ID Pedido</th>
+<th class="px-gutter py-stack-sm font-label-sm text-label-sm text-secondary border-b border-outline-variant">Cliente</th>
+<th class="px-gutter py-stack-sm font-label-sm text-label-sm text-secondary border-b border-outline-variant">Estado</th>
+<th class="px-gutter py-stack-sm font-label-sm text-label-sm text-secondary border-b border-outline-variant text-right">Monto</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary">#ORD-4582</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-secondary">Industrial Solutions S.A.</td>
+<td class="px-gutter py-stack-md">
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-100">PROCESANDO</span>
+</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary text-right">€12.450,00</td>
+</tr>
+<tr class="bg-gray-50/50 hover:bg-surface-container-lowest transition-colors">
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary">#ORD-4581</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-secondary">Construcciones El Faro</td>
+<td class="px-gutter py-stack-md">
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100">ENTREGADO</span>
+</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary text-right">€8.120,50</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary">#ORD-4580</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-secondary">Logística Global SL</td>
+<td class="px-gutter py-stack-md">
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-100">PROCESANDO</span>
+</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary text-right">€24.000,00</td>
+</tr>
+<tr class="bg-gray-50/50 hover:bg-surface-container-lowest transition-colors">
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary">#ORD-4579</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-secondary">Taller Mecánico Ruiz</td>
+<td class="px-gutter py-stack-md">
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-100">PENDIENTE</span>
+</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary text-right">€3.450,00</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary">#ORD-4578</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-secondary">Metalúrgica del Norte</td>
+<td class="px-gutter py-stack-md">
+<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100">ENTREGADO</span>
+</td>
+<td class="px-gutter py-stack-md font-body-sm text-body-sm text-primary text-right">€15.200,00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Sidebar Content (Production & Alerts) -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<!-- Production Status Widget -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md">
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-h3 text-h3 text-primary">Estado de Producción</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="more_vert">more_vert</span>
+</div>
+<div class="space-y-stack-md">
+<div class="flex items-center gap-4">
+<div class="relative h-10 w-10 flex-shrink-0">
+<svg class="h-full w-full" viewBox="0 0 36 36">
+<path class="stroke-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="stroke-blue-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="65, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">65%</div>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary">OP-102: En Progreso</p>
+<p class="font-body-sm text-body-sm text-secondary">Piezas de acero estructural</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative h-10 w-10 flex-shrink-0">
+<svg class="h-full w-full" viewBox="0 0 36 36">
+<path class="stroke-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="stroke-blue-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="5, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">5%</div>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary">OP-105: Pendiente</p>
+<p class="font-body-sm text-body-sm text-secondary">Corte láser aluminio G2</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative h-10 w-10 flex-shrink-0">
+<svg class="h-full w-full" viewBox="0 0 36 36">
+<path class="stroke-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="stroke-blue-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="90, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">90%</div>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary">OP-098: Fase Final</p>
+<p class="font-body-sm text-body-sm text-secondary">Ensamblaje válvulas de presión</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Low Stock Alerts Widget -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md">
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-h3 text-h3 text-primary">Alertas de Stock</h3>
+<span class="material-symbols-outlined text-error" data-icon="notifications_active">notifications_active</span>
+</div>
+<div class="space-y-stack-sm">
+<div class="p-stack-sm bg-error-container/20 border border-error/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="inventory">inventory</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary">Aluminio Reforzado 40mm</p>
+<p class="text-[11px] text-on-error-container">Quedan 12 unidades (Mín. 50)</p>
+</div>
+<button class="p-1 hover:bg-error/10 rounded">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-stack-sm bg-amber-50 border border-amber-200 flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-600 text-[18px]" data-icon="inventory">inventory</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary">Pernos Zincados M12</p>
+<p class="text-[11px] text-amber-800">Quedan 120 unidades (Mín. 200)</p>
+</div>
+<button class="p-1 hover:bg-amber-100 rounded">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-stack-sm bg-error-container/20 border border-error/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="inventory">inventory</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary">Lubricante Grado Industrial</p>
+<p class="text-[11px] text-on-error-container">Crítico: 2L restantes</p>
+</div>
+<button class="p-1 hover:bg-error/10 rounded">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-stack-md py-2 border border-outline font-label-sm text-label-sm text-secondary hover:bg-surface-container-low transition-colors">
+                            Gestionar Inventario
+                        </button>
+</div>
+</div>
+</div>
+<!-- Dashboard Analytics Preview (Bento Section) -->
+<div class="mt-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md h-48 relative overflow-hidden group">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase mb-2">Eficiencia de Planta</h4>
+<p class="font-h2 text-h2 text-primary">94.2%</p>
+<div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-blue-50 to-transparent flex items-end px-4">
+<div class="flex items-end gap-1 w-full">
+<div class="w-full bg-blue-600/20 h-8"></div>
+<div class="w-full bg-blue-600/30 h-12"></div>
+<div class="w-full bg-blue-600/40 h-10"></div>
+<div class="w-full bg-blue-600/50 h-14"></div>
+<div class="w-full bg-blue-600 h-16"></div>
+</div>
+</div>
+</div>
+<div class="bg-slate-900 border border-slate-800 p-stack-md h-48 flex flex-col justify-between overflow-hidden relative">
+<div>
+<h4 class="font-label-sm text-label-sm text-slate-400 uppercase mb-2">Pedidos en Espera</h4>
+<p class="font-h2 text-h2 text-white">12</p>
+</div>
+<div class="flex -space-x-2">
+<img alt="Staff 1" class="h-8 w-8 rounded-full border-2 border-slate-900 object-cover" data-alt="portrait of a young male professional engineer wearing safety glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlcL2y6HSIyHtKkRhYvpjdxBpilwu58Yq6mWHk1aq8NQRVbZMFuSEvxVbwAJqzNjsW-NHSvXQa1988u7n6t6_F0X09okikL1IhuuMLtafw0W4nZ4Wz0AaCYHGGMDiLPwmsN5oRETiEW3l2BCkkDNjx0Qb3eUL-kYsjWofPQJRDeIp3EFaZknlDOQVjH1EXK1W5wu5TvOXh-1wgyiYQj-vJRnpCuMiuqltSkal29WK2ugaGdSR4K_YwEac-eIYVYiUIHZV-TOWmc4k">
+<img alt="Staff 2" class="h-8 w-8 rounded-full border-2 border-slate-900 object-cover" data-alt="portrait of a female manufacturing supervisor in a high-tech factory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB26E-mxh7ju-2JSp5aCFAYBVK5DnexuOY2D5pItH2Tt18brSNBhEXlotHF1DuhiEhdqpsEvBzZ3wfxe9q3S8yU7YZXN8A3lWtdtu2j8gH1pxgNbxwyM60Q2SdzdflmnrusEQEdN_teQQ9ptFqG_xKWW_SPForg9UeT72lcFjhLCMG4Y9zOxds9rqtNaxvmH8mUKnBC2yQa-P1NmTS6aEgZwVLBhep1_8x9HjSxWBqD4GtWUTd25fijyinytpuC2-_kxcYEgQ7NcG8">
+<img alt="Staff 3" class="h-8 w-8 rounded-full border-2 border-slate-900 object-cover" data-alt="portrait of a male technician working in a clean industrial environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNtBQUjw_n1k-143uYtsm_Z3HdO_E3pO43NvL9azIh7RF3q9RIDxkggejEUBEDdz899IgdWLZvw0EknpvPZCaGkvSuym8XVStz8PKiQbz3DK0d1CLx2NuDsnBU7a-JV--BmEIexeNbypXa5TAJQpaciRi5HkuXdMokIkACYq3r25fizApsT1XtunG6ZOSogKndqHUjIu8OArcTdUjSnhFcBnTKWJlG7giJm1fMKm9RHCp7HWm8SfK6f4-K8-scOn-_L3xnXVqZnhM">
+<div class="h-8 w-8 rounded-full border-2 border-slate-900 bg-slate-700 flex items-center justify-center text-[10px] text-white font-bold">+9</div>
+</div>
+<span class="material-symbols-outlined absolute top-4 right-4 text-slate-700 text-4xl opacity-50" data-icon="group">group</span>
+</div>
+<div class="bg-primary border border-primary p-stack-md h-48 flex flex-col justify-between text-white">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-primary-container uppercase mb-2">Turno Actual</h4>
+<p class="font-h2 text-h2">Alpha-7 (Mañana)</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></div>
+<p class="text-xs text-on-primary-container">Supervisor: Marcos Galperin</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
