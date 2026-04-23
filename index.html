@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>EleDesing - Sistema de Gestión Interna</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Forzar bordes rectos globalmente en elementos formales */
+        input, button, .card, .badge {
+            border-radius: 0 !important;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#222222",
+                        "accent": "#C1D14D",
+                        "background": "#EAE8E4",
+                        "surface": "#F8F8F8",
+                        "surface-container-lowest": "#FFFFFF",
+                        "secondary": "#555555",
+                        "outline-variant": "#d1d5db",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                    },
+                    "fontFamily": {
+                        "sans": ["Montserrat", "sans-serif"]
+                    },
+                    "borderRadius": {
+                        "none": "0px",
+                        "sm": "0px",
+                        DEFAULT: "0px",
+                        "md": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "2xl": "0px",
+                        "3xl": "0px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-sans text-primary antialiased h-screen overflow-hidden flex uppercase-headings tracking-normal">
+
+    <!-- Sidebar Shell -->
+    <aside class="w-64 bg-primary border-r border-slate-700 flex flex-col h-full flex-shrink-0">
+        <div class="px-6 py-8 border-b border-slate-800">
+            <h1 class="text-xl font-black tracking-widest text-white uppercase">ELEDESING</h1>
+            <p class="text-accent text-[10px] mt-2 uppercase tracking-[0.2em] font-bold">Management Portal</p>
+        </div>
+        <nav class="flex-1 space-y-1 overflow-y-auto px-2 mt-4">
+            <a href="#" id="nav-dashboard" onclick="showModule('dashboard'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="uppercase tracking-widest text-xs">Dashboard</span>
+            </a>
+            <a href="#" id="nav-usuarios" onclick="showModule('usuarios'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="group">group</span>
+                <span class="uppercase tracking-widest text-xs">Usuarios</span>
+            </a>
+            <a href="#" id="nav-materiales" onclick="showModule('materiales'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="category">category</span>
+                <span class="uppercase tracking-widest text-xs">Materiales</span>
+            </a>
+            <a href="#" id="nav-stock" onclick="showModule('stock'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+                <span class="uppercase tracking-widest text-xs">Stock</span>
+            </a>
+            <a href="#" id="nav-presupuestos" onclick="showModule('presupuestos'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+                <span class="uppercase tracking-widest text-xs">Presupuestos</span>
+            </a>
+            <a href="#" id="nav-pedidos" onclick="showModule('pedidos'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                <span class="uppercase tracking-widest text-xs">Pedidos</span>
+            </a>
+            <a href="#" id="nav-planos" onclick="showModule('planos'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+                <span class="uppercase tracking-widest text-xs">Planos</span>
+            </a>
+            <a href="#" id="nav-notificaciones" onclick="showModule('notificaciones'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                <span class="uppercase tracking-widest text-xs">Alertas</span>
+            </a>
+            <a href="#" id="nav-reportes" onclick="showModule('reportes'); return false;" class="nav-item flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-all duration-200">
+                <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                <span class="uppercase tracking-widest text-xs">Reportes</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-800 bg-[#1A1A1A]">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 bg-accent flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary font-bold">person</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-white uppercase tracking-widest truncate">Admin</p>
+                    <p class="text-[10px] text-slate-400 truncate">SISTEMA ELEDESING</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <header class="h-16 bg-surface-container-lowest border-b border-slate-200 flex justify-between items-center px-6 flex-shrink-0">
+            <div class="flex items-center flex-1">
+                <div class="relative w-full max-w-md">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+                    <input class="w-full bg-surface border border-slate-200 pl-10 pr-4 py-2 text-xs font-semibold focus:outline-none focus:border-primary transition-all uppercase tracking-wide" placeholder="BUSCAR PEDIDOS O MATERIALES..." type="text">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-primary hover:bg-surface active:opacity-80 transition-opacity relative border border-transparent hover:border-slate-200">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-1 right-1 h-2 w-2 bg-accent border border-primary"></span>
+                </button>
+                <button class="p-2 text-primary hover:bg-surface active:opacity-80 transition-opacity border border-transparent hover:border-slate-200">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+                <div class="h-8 w-px bg-slate-200 mx-2"></div>
+                <div class="h-8 w-8 bg-primary text-white flex items-center justify-center text-xs font-bold">AD</div>
+            </div>
+        </header>
+
+        <!-- Canvas -->
+        <main class="flex-1 overflow-y-auto p-8 bg-background">
+            <div class="max-w-[1600px] mx-auto">
+                
+                <!-- ================= MODULE: DASHBOARD ================= -->
+                <section id="dashboard" class="module-section">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Panel Principal</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Resumen Operativo / Turno Actual</p>
+                        </div>
+                        <button class="px-6 py-2 bg-primary text-white text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-colors flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">download</span>
+                            Exportar CSV
+                        </button>
+                    </div>
+
+                    <!-- Key Metrics Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                        <div class="bg-surface-container-lowest border border-slate-200 p-5 flex flex-col justify-between hover:border-primary transition-colors">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-xs font-bold text-secondary uppercase tracking-widest">Total Pedidos</p>
+                                <span class="material-symbols-outlined text-accent text-2xl">shopping_basket</span>
+                            </div>
+                            <h3 class="text-4xl font-black text-primary">1.284</h3>
+                            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-primary">
+                                <span class="material-symbols-outlined text-sm">trending_up</span>
+                                <span class="uppercase">+12.5% VS MES ANT.</span>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-lowest border border-slate-200 p-5 flex flex-col justify-between hover:border-primary transition-colors">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-xs font-bold text-secondary uppercase tracking-widest">Producción Activa</p>
+                                <span class="material-symbols-outlined text-accent text-2xl">precision_manufacturing</span>
+                            </div>
+                            <h3 class="text-4xl font-black text-primary">42</h3>
+                            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-primary">
+                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <span class="uppercase">8 LÍNEAS FUNCIONANDO</span>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-lowest border border-red-500 p-5 flex flex-col justify-between">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-xs font-bold text-red-500 uppercase tracking-widest">Stock Crítico</p>
+                                <span class="material-symbols-outlined text-red-500 text-2xl">warning</span>
+                            </div>
+                            <h3 class="text-4xl font-black text-red-500">18</h3>
+                            <div class="mt-4 pt-4 border-t border-red-100 flex items-center gap-2 text-xs font-bold text-red-500">
+                                <span class="material-symbols-outlined text-sm">error</span>
+                                <span class="uppercase">ACCIÓN INMEDIATA</span>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-lowest border border-slate-200 p-5 flex flex-col justify-between hover:border-primary transition-colors">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-xs font-bold text-secondary uppercase tracking-widest">Ingresos Mensuales</p>
+                                <span class="material-symbols-outlined text-accent text-2xl">payments</span>
+                            </div>
+                            <h3 class="text-4xl font-black text-primary">€245.8k</h3>
+                            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-primary">
+                                <span class="material-symbols-outlined text-sm">trending_up</span>
+                                <span class="uppercase">+4.2% INCREMENTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Pedidos Recientes -->
+                        <div class="lg:col-span-2 bg-surface-container-lowest border border-slate-200">
+                            <div class="p-5 border-b border-slate-200 flex justify-between items-center bg-surface">
+                                <h3 class="font-bold text-primary uppercase tracking-widest text-sm">Órdenes Recientes</h3>
+                                <button class="text-primary text-xs font-bold border-b border-primary hover:text-accent hover:border-accent transition-colors uppercase tracking-widest" onclick="showModule('pedidos')">Ver Todas</button>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="border-b border-slate-200">
+                                            <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">ID</th>
+                                            <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Cliente</th>
+                                            <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Estado</th>
+                                            <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest text-right">Monto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                                        <tr class="hover:bg-surface">
+                                            <td class="px-5 py-4 text-sm font-bold text-primary">#ORD-4582</td>
+                                            <td class="px-5 py-4 text-sm text-secondary font-medium">Industrial Solutions S.A.</td>
+                                            <td class="px-5 py-4"><span class="px-2 py-1 text-[10px] font-bold bg-surface border border-primary text-primary uppercase tracking-widest">PROCESANDO</span></td>
+                                            <td class="px-5 py-4 text-sm font-bold text-primary text-right">€12.450,00</td>
+                                        </tr>
+                                        <tr class="hover:bg-surface">
+                                            <td class="px-5 py-4 text-sm font-bold text-primary">#ORD-4581</td>
+                                            <td class="px-5 py-4 text-sm text-secondary font-medium">Construcciones El Faro</td>
+                                            <td class="px-5 py-4"><span class="px-2 py-1 text-[10px] font-bold bg-accent border border-primary text-primary uppercase tracking-widest">ENTREGADO</span></td>
+                                            <td class="px-5 py-4 text-sm font-bold text-primary text-right">€8.120,50</td>
+                                        </tr>
+                                        <tr class="hover:bg-surface">
+                                            <td class="px-5 py-4 text-sm font-bold text-primary">#ORD-4580</td>
+                                            <td class="px-5 py-4 text-sm text-secondary font-medium">Logística Global SL</td>
+                                            <td class="px-5 py-4"><span class="px-2 py-1 text-[10px] font-bold bg-surface border border-primary text-primary uppercase tracking-widest">PROCESANDO</span></td>
+                                            <td class="px-5 py-4 text-sm font-bold text-primary text-right">€24.000,00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Alertas de Stock -->
+                        <div class="bg-surface-container-lowest border border-slate-200">
+                            <div class="p-5 border-b border-slate-200 bg-surface flex justify-between items-center">
+                                <h3 class="font-bold text-primary uppercase tracking-widest text-sm">Alertas de Stock</h3>
+                                <span class="material-symbols-outlined text-red-500">notifications_active</span>
+                            </div>
+                            <div class="p-5 space-y-4">
+                                <div class="p-4 border border-red-200 bg-[#FFF5F5] flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-red-500">inventory</span>
+                                    <div class="flex-1">
+                                        <p class="text-xs font-bold text-primary uppercase tracking-wide">Aluminio Reforzado 40mm</p>
+                                        <p class="text-[10px] text-red-600 font-bold tracking-widest mt-1">QUEDAN 12 UNID. (MÍN. 50)</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 border border-primary bg-surface flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-primary">inventory</span>
+                                    <div class="flex-1">
+                                        <p class="text-xs font-bold text-primary uppercase tracking-wide">Pernos Zincados M12</p>
+                                        <p class="text-[10px] text-primary font-bold tracking-widest mt-1">QUEDAN 120 UNID. (MÍN. 200)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-5 pb-5">
+                                <button class="w-full py-3 border-2 border-primary text-xs font-bold text-primary hover:bg-primary hover:text-white transition-colors uppercase tracking-widest" onclick="showModule('stock')">GESTIONAR INVENTARIO</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: USUARIOS Y ROLES ================= -->
+                <section id="usuarios" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Usuarios y Roles</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Gestión de Accesos de Personal</p>
+                        </div>
+                        <button class="px-6 py-2 bg-accent text-primary text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white border-2 border-transparent hover:border-primary transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">add</span>
+                            NUEVO USUARIO
+                        </button>
+                    </div>
+
+                    <div class="bg-surface-container-lowest border border-slate-200">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface border-b border-slate-200">
+                                <tr>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Usuario</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Email</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Rol</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Estado</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest text-right">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 flex items-center gap-4">
+                                        <div class="w-10 h-10 bg-primary flex items-center justify-center text-white text-xs font-bold">FM</div>
+                                        <span class="text-sm font-bold text-primary uppercase tracking-wide">Franco Maccio</span>
+                                    </td>
+                                    <td class="px-5 py-4 text-sm text-secondary font-medium uppercase tracking-wide">franco@macciotec.com</td>
+                                    <td class="px-5 py-4"><span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase tracking-widest">ADMIN</span></td>
+                                    <td class="px-5 py-4"><span class="flex items-center gap-2 text-xs font-bold text-primary"><div class="w-2 h-2 bg-accent border border-primary"></div> ACTIVO</span></td>
+                                    <td class="px-5 py-4 text-right">
+                                        <button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 flex items-center gap-4">
+                                        <div class="w-10 h-10 bg-surface border border-slate-300 flex items-center justify-center text-primary text-xs font-bold">LS</div>
+                                        <span class="text-sm font-bold text-primary uppercase tracking-wide">Lucas Silva</span>
+                                    </td>
+                                    <td class="px-5 py-4 text-sm text-secondary font-medium uppercase tracking-wide">lsilva@macciotec.com</td>
+                                    <td class="px-5 py-4"><span class="px-2 py-1 border border-primary text-primary text-[10px] font-bold uppercase tracking-widest">SUPERVISOR</span></td>
+                                    <td class="px-5 py-4"><span class="flex items-center gap-2 text-xs font-bold text-primary"><div class="w-2 h-2 bg-accent border border-primary"></div> ACTIVO</span></td>
+                                    <td class="px-5 py-4 text-right">
+                                        <button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface opacity-50">
+                                    <td class="px-5 py-4 flex items-center gap-4">
+                                        <div class="w-10 h-10 bg-slate-200 flex items-center justify-center text-slate-500 text-xs font-bold">AP</div>
+                                        <span class="text-sm font-bold text-slate-500 uppercase tracking-wide">Ana Perez</span>
+                                    </td>
+                                    <td class="px-5 py-4 text-sm text-slate-500 font-medium uppercase tracking-wide">aperez@macciotec.com</td>
+                                    <td class="px-5 py-4"><span class="px-2 py-1 border border-slate-300 text-slate-500 text-[10px] font-bold uppercase tracking-widest">OPERADOR</span></td>
+                                    <td class="px-5 py-4"><span class="flex items-center gap-2 text-xs font-bold text-slate-500"><div class="w-2 h-2 bg-slate-400 border border-slate-500"></div> INACTIVO</span></td>
+                                    <td class="px-5 py-4 text-right">
+                                        <button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">settings_backup_restore</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: MATERIALES ================= -->
+                <section id="materiales" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Materiales</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Directorio de Materias Primas</p>
+                        </div>
+                        <button class="px-6 py-2 bg-primary text-white text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary border-2 border-primary transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">add</span>
+                            REGISTRAR MATERIAL
+                        </button>
+                    </div>
+
+                    <div class="flex gap-4 mb-6">
+                        <button class="px-4 py-2 bg-accent text-primary text-xs font-bold border border-primary uppercase tracking-widest">TODOS</button>
+                        <button class="px-4 py-2 bg-surface text-secondary text-xs font-bold border border-slate-300 hover:border-primary hover:text-primary uppercase tracking-widest transition-colors">METALES</button>
+                        <button class="px-4 py-2 bg-surface text-secondary text-xs font-bold border border-slate-300 hover:border-primary hover:text-primary uppercase tracking-widest transition-colors">PLÁSTICOS</button>
+                        <button class="px-4 py-2 bg-surface text-secondary text-xs font-bold border border-slate-300 hover:border-primary hover:text-primary uppercase tracking-widest transition-colors">TORNILLERÍA</button>
+                    </div>
+
+                    <div class="bg-surface-container-lowest border border-slate-200">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface border-b border-slate-200">
+                                <tr>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Código</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Descripción</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Familia</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">U/M</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest text-right">Tarifa Ref.</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 text-xs font-black text-secondary tracking-widest">MT-ALU-01</td>
+                                    <td class="px-5 py-4 text-sm font-bold text-primary uppercase">Aluminio Reforzado 40mm</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-wide">Metales</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-wide">Metro</td>
+                                    <td class="px-5 py-4 text-sm font-black text-primary text-right">$1,200.00</td>
+                                </tr>
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 text-xs font-black text-secondary tracking-widest">TR-ZIN-12</td>
+                                    <td class="px-5 py-4 text-sm font-bold text-primary uppercase">Perno Zincado M12</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-wide">Tornillería</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-wide">Unidad</td>
+                                    <td class="px-5 py-4 text-sm font-black text-primary text-right">$45.50</td>
+                                </tr>
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 text-xs font-black text-secondary tracking-widest">PL-ACR-05</td>
+                                    <td class="px-5 py-4 text-sm font-bold text-primary uppercase">Placa Acrílico 5mm Transparente</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-wide">Plásticos</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-wide">M²</td>
+                                    <td class="px-5 py-4 text-sm font-black text-primary text-right">$4,500.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: STOCK ================= -->
+                <section id="stock" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Inventario</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Niveles de Stock Físico</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="px-6 py-2 bg-surface text-primary border border-slate-300 text-xs font-bold uppercase tracking-widest hover:border-primary transition-colors">AJUSTE</button>
+                            <button class="px-6 py-2 bg-primary text-white border-2 border-primary text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-colors">MOVIMIENTO</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Critico -->
+                        <div class="bg-surface-container-lowest border border-red-500 p-5 relative">
+                            <div class="absolute top-0 right-0 bg-red-500 text-white p-2">
+                                <span class="material-symbols-outlined text-sm">warning</span>
+                            </div>
+                            <h4 class="font-black text-primary text-sm uppercase tracking-wider mb-2 pr-8">Aluminio Reforzado 40mm</h4>
+                            <p class="text-[10px] font-bold text-secondary tracking-widest mb-6 uppercase">ID: MT-ALU-01 | UBIC: A-12</p>
+                            
+                            <div class="flex justify-between text-xs mb-2 font-bold uppercase tracking-wider">
+                                <span class="text-red-500">12 M (ACTUAL)</span>
+                                <span class="text-secondary">MÍN: 50 M</span>
+                            </div>
+                            <div class="w-full bg-surface border border-slate-200 h-3">
+                                <div class="bg-red-500 h-full" style="width: 24%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Medio -->
+                        <div class="bg-surface-container-lowest border border-slate-300 p-5 relative">
+                            <div class="absolute top-0 right-0 bg-slate-200 text-slate-600 p-2">
+                                <span class="material-symbols-outlined text-sm">info</span>
+                            </div>
+                            <h4 class="font-black text-primary text-sm uppercase tracking-wider mb-2 pr-8">Perno Zincado M12</h4>
+                            <p class="text-[10px] font-bold text-secondary tracking-widest mb-6 uppercase">ID: TR-ZIN-12 | UBIC: C-04</p>
+                            
+                            <div class="flex justify-between text-xs mb-2 font-bold uppercase tracking-wider">
+                                <span class="text-primary">120 U (ACTUAL)</span>
+                                <span class="text-secondary">MÍN: 200 U</span>
+                            </div>
+                            <div class="w-full bg-surface border border-slate-200 h-3">
+                                <div class="bg-primary h-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Ok -->
+                        <div class="bg-surface-container-lowest border border-slate-300 p-5 relative">
+                            <div class="absolute top-0 right-0 bg-accent text-primary p-2 border-b border-l border-primary">
+                                <span class="material-symbols-outlined text-sm">check</span>
+                            </div>
+                            <h4 class="font-black text-primary text-sm uppercase tracking-wider mb-2 pr-8">Placa Acrílico 5mm</h4>
+                            <p class="text-[10px] font-bold text-secondary tracking-widest mb-6 uppercase">ID: PL-ACR-05 | UBIC: B-01</p>
+                            
+                            <div class="flex justify-between text-xs mb-2 font-bold uppercase tracking-wider">
+                                <span class="text-primary">85 M² (ACTUAL)</span>
+                                <span class="text-secondary">MÍN: 30 M²</span>
+                            </div>
+                            <div class="w-full bg-surface border border-slate-200 h-3">
+                                <div class="bg-accent h-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: PRESUPUESTOS ================= -->
+                <section id="presupuestos" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Cotizaciones</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Gestión Comercial</p>
+                        </div>
+                        <button class="px-6 py-2 bg-accent text-primary text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white border-2 border-transparent hover:border-primary transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">post_add</span>
+                            NUEVA COTIZACIÓN
+                        </button>
+                    </div>
+
+                    <div class="bg-surface-container-lowest border border-slate-200">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface border-b border-slate-200">
+                                <tr>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">ID</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Cliente</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Fecha</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">Estado</th>
+                                    <th class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest text-right">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 text-xs font-black text-primary tracking-widest">PRE-2026-001</td>
+                                    <td class="px-5 py-4 text-sm font-bold text-primary uppercase">Constructora Vallejo</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">18 ABR 2026</td>
+                                    <td class="px-5 py-4"><span class="px-2 py-1 bg-accent border border-primary text-primary text-[10px] font-bold uppercase tracking-widest">APROBADO</span></td>
+                                    <td class="px-5 py-4 text-sm font-black text-primary text-right">$45,000.00</td>
+                                </tr>
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 text-xs font-black text-primary tracking-widest">PRE-2026-002</td>
+                                    <td class="px-5 py-4 text-sm font-bold text-primary uppercase">Muebles de Diseño SA</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">20 ABR 2026</td>
+                                    <td class="px-5 py-4"><span class="px-2 py-1 bg-surface border border-primary text-primary text-[10px] font-bold uppercase tracking-widest">ENVIADO</span></td>
+                                    <td class="px-5 py-4 text-sm font-black text-primary text-right">$12,400.00</td>
+                                </tr>
+                                <tr class="hover:bg-surface">
+                                    <td class="px-5 py-4 text-xs font-black text-primary tracking-widest">PRE-2026-003</td>
+                                    <td class="px-5 py-4 text-sm font-bold text-primary uppercase">TechCorp Arg</td>
+                                    <td class="px-5 py-4 text-xs font-bold text-secondary uppercase tracking-widest">22 ABR 2026</td>
+                                    <td class="px-5 py-4"><span class="px-2 py-1 bg-background text-secondary border border-slate-300 text-[10px] font-bold uppercase tracking-widest">BORRADOR</span></td>
+                                    <td class="px-5 py-4 text-sm font-black text-primary text-right">$8,900.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: PEDIDOS ================= -->
+                <section id="pedidos" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Pipeline de Producción</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Flujo Operativo de Órdenes</p>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Minimalist Style -->
+                    <div class="flex gap-6 overflow-x-auto pb-4">
+                        <!-- Column: Pendientes -->
+                        <div class="min-w-[320px] flex-shrink-0">
+                            <div class="border-b-2 border-primary mb-4 pb-2 flex justify-between items-center">
+                                <h4 class="font-black text-sm text-primary uppercase tracking-widest">PENDIENTES</h4>
+                                <span class="bg-primary text-white text-[10px] px-2 py-1 font-bold">2</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-surface-container-lowest border border-slate-200 p-4 border-l-4 border-l-primary hover:border-r-primary transition-colors cursor-pointer">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-black text-xs text-primary tracking-widest">ORD-4583</span>
+                                        <span class="text-[10px] font-bold text-secondary tracking-widest uppercase">HOY</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-primary uppercase mb-2">Estructuras Metálicas X2</p>
+                                    <p class="text-[10px] font-bold text-secondary tracking-widest uppercase">CLI: Industrias Acme</p>
+                                </div>
+                                <div class="bg-surface-container-lowest border border-slate-200 p-4 border-l-4 border-l-primary hover:border-r-primary transition-colors cursor-pointer">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-black text-xs text-primary tracking-widest">ORD-4584</span>
+                                        <span class="text-[10px] font-bold text-secondary tracking-widest uppercase">AYER</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-primary uppercase mb-2">Lote 50x Cajas Acrílico</p>
+                                    <p class="text-[10px] font-bold text-secondary tracking-widest uppercase">CLI: Retail Sur</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column: En Producción -->
+                        <div class="min-w-[320px] flex-shrink-0">
+                            <div class="border-b-2 border-accent mb-4 pb-2 flex justify-between items-center">
+                                <h4 class="font-black text-sm text-primary uppercase tracking-widest">PRODUCCIÓN</h4>
+                                <span class="bg-accent text-primary border border-primary text-[10px] px-2 py-1 font-bold">1</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-surface-container-lowest border border-slate-200 p-4 border-l-4 border-l-accent hover:border-r-accent transition-colors cursor-pointer">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-black text-xs text-primary tracking-widest">ORD-4582</span>
+                                        <span class="text-[10px] font-bold text-secondary tracking-widest uppercase">-2 DÍAS</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-primary uppercase mb-2">Mobiliario Oficina V2</p>
+                                    <p class="text-[10px] font-bold text-secondary tracking-widest uppercase mb-4">CLI: Industrial Solutions</p>
+                                    <div class="w-full bg-surface border border-slate-200 h-2">
+                                        <div class="bg-accent h-full" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column: Entregados -->
+                        <div class="min-w-[320px] flex-shrink-0">
+                            <div class="border-b-2 border-slate-300 mb-4 pb-2 flex justify-between items-center">
+                                <h4 class="font-black text-sm text-secondary uppercase tracking-widest">ENTREGADOS</h4>
+                                <span class="bg-surface border border-slate-300 text-secondary text-[10px] px-2 py-1 font-bold">1</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-background border border-slate-300 p-4 opacity-70">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-black text-xs text-secondary tracking-widest line-through">ORD-4581</span>
+                                        <span class="text-[10px] font-bold text-secondary tracking-widest uppercase">18 ABR</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-secondary uppercase mb-2 line-through">Estructura Base V1</p>
+                                    <p class="text-[10px] font-bold text-secondary tracking-widest uppercase">CLI: Construcciones Faro</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: PLANOS ================= -->
+                <section id="planos" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Archivo Técnico</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Planos y Diseños de Producción</p>
+                        </div>
+                        <button class="px-6 py-2 bg-primary text-white text-xs font-black uppercase tracking-widest hover:bg-accent hover:text-primary border-2 border-primary transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">upload</span>
+                            CARGAR ARCHIVO
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="bg-surface-container-lowest border border-slate-200 p-4 hover:border-primary transition-colors cursor-pointer group flex flex-col">
+                            <div class="flex-1 min-h-[120px] bg-surface mb-4 flex items-center justify-center border border-slate-100 group-hover:bg-background transition-colors">
+                                <span class="material-symbols-outlined text-4xl text-slate-300 group-hover:text-primary transition-colors">architecture</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-primary uppercase tracking-wide truncate mb-1">Estructura_Base_V2.dwg</h4>
+                            <p class="text-[10px] font-bold text-secondary tracking-widest uppercase">REF: ORD-4581</p>
+                        </div>
+                        <div class="bg-surface-container-lowest border border-slate-200 p-4 hover:border-primary transition-colors cursor-pointer group flex flex-col">
+                            <div class="flex-1 min-h-[120px] bg-surface mb-4 flex items-center justify-center border border-slate-100 group-hover:bg-background transition-colors">
+                                <span class="material-symbols-outlined text-4xl text-slate-300 group-hover:text-primary transition-colors">picture_as_pdf</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-primary uppercase tracking-wide truncate mb-1">Corte_Laser_Guia.pdf</h4>
+                            <p class="text-[10px] font-bold text-secondary tracking-widest uppercase">REF: ORD-4584</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: NOTIFICACIONES ================= -->
+                <section id="notificaciones" class="module-section hidden">
+                    <div class="mb-8 flex justify-between items-end border-b border-slate-300 pb-4">
+                        <div>
+                            <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Alertas del Sistema</h2>
+                            <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Centro de Notificaciones</p>
+                        </div>
+                        <button class="text-primary text-xs font-bold border-b border-primary hover:text-accent hover:border-accent transition-colors uppercase tracking-widest">MARCAR TODAS LEÍDAS</button>
+                    </div>
+
+                    <div class="bg-surface-container-lowest border border-slate-200">
+                        <div class="divide-y divide-slate-100">
+                            <!-- Alerta Error -->
+                            <div class="p-6 bg-[#FFF5F5] border-l-4 border-l-red-500 flex gap-6 items-start">
+                                <span class="material-symbols-outlined text-red-500 text-2xl">inventory_2</span>
+                                <div class="flex-1">
+                                    <h4 class="text-sm font-black text-primary uppercase tracking-widest">Stock Crítico: Lubricante Grado Industrial</h4>
+                                    <p class="text-xs font-semibold text-secondary mt-2 uppercase tracking-wide">Quedan menos de 2L. La producción de la línea 3 podría detenerse.</p>
+                                    <p class="text-[10px] font-bold text-red-500 mt-4 tracking-widest uppercase">HACE 15 MIN</p>
+                                </div>
+                            </div>
+
+                            <!-- Alerta Info -->
+                            <div class="p-6 bg-surface hover:bg-surface-container-lowest transition-colors flex gap-6 items-start border-l-4 border-l-transparent hover:border-l-primary">
+                                <span class="material-symbols-outlined text-primary text-2xl">verified</span>
+                                <div class="flex-1">
+                                    <h4 class="text-sm font-black text-primary uppercase tracking-widest">Presupuesto Aprobado</h4>
+                                    <p class="text-xs font-semibold text-secondary mt-2 uppercase tracking-wide">El cliente "Constructora Vallejo" ha aprobado PRE-2026-001.</p>
+                                    <p class="text-[10px] font-bold text-slate-400 mt-4 tracking-widest uppercase">HACE 2 HORAS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= MODULE: REPORTES ================= -->
+                <section id="reportes" class="module-section hidden">
+                    <div class="mb-8 border-b border-slate-300 pb-4">
+                        <h2 class="text-3xl font-black text-primary uppercase tracking-widest">Métricas y Reportes</h2>
+                        <p class="text-xs font-semibold text-secondary mt-2 tracking-widest uppercase">Exportación de Datos Gerenciales</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Produccion -->
+                        <div class="bg-surface-container-lowest border border-slate-200 p-6 flex flex-col hover:border-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl text-primary mb-4">precision_manufacturing</span>
+                            <h3 class="font-black text-sm text-primary uppercase tracking-widest mb-2">Producción</h3>
+                            <p class="text-xs font-semibold text-secondary mb-6 h-10 uppercase tracking-wide">Métricas de eficiencia y tiempos operativos.</p>
+                            <div class="space-y-3 mt-auto">
+                                <button class="w-full py-3 border border-slate-300 text-xs font-bold text-primary hover:border-primary transition-colors uppercase tracking-widest">REPORTE SEMANAL</button>
+                            </div>
+                        </div>
+
+                        <!-- Financiero -->
+                        <div class="bg-surface-container-lowest border border-slate-200 p-6 flex flex-col hover:border-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl text-primary mb-4">request_quote</span>
+                            <h3 class="font-black text-sm text-primary uppercase tracking-widest mb-2">Comercial</h3>
+                            <p class="text-xs font-semibold text-secondary mb-6 h-10 uppercase tracking-wide">Histórico de presupuestos y flujos.</p>
+                            <div class="space-y-3 mt-auto">
+                                <button class="w-full py-3 border border-slate-300 text-xs font-bold text-primary hover:border-primary transition-colors uppercase tracking-widest">EXPORTAR DATOS YTD</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript for SPA Navigation -->
+    <script>
+        function showModule(moduleId) {
+            // Hide all modules
+            const modules = document.querySelectorAll('.module-section');
+            modules.forEach(mod => mod.classList.add('hidden'));
+
+            // Show selected module
+            const activeModule = document.getElementById(moduleId);
+            if(activeModule) {
+                activeModule.classList.remove('hidden');
+            }
+
+            // Reset all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                // Remove active classes
+                item.classList.remove('bg-surface', 'border-l-4', 'border-accent', 'text-white');
+                // Add inactive classes
+                item.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-slate-800');
+            });
+
+            // Set active nav item
+            const activeNav = document.getElementById('nav-' + moduleId);
+            if(activeNav) {
+                // Remove inactive classes
+                activeNav.classList.remove('text-slate-400', 'hover:text-white', 'hover:bg-slate-800');
+                // Add active classes
+                activeNav.classList.add('bg-[#1A1A1A]', 'border-l-4', 'border-accent', 'text-white');
+            }
+        }
+
+        // Initialize dashboard on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showModule('dashboard');
+        });
+    </script>
+</body>
+</html>

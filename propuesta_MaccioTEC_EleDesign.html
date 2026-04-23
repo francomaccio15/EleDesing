@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Comercial | MaccioTEC para EleDesign</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        maccio: {
+                            900: '#001533',
+                            800: '#002046', /* Primary MaccioTEC */
+                            700: '#003366',
+                            600: '#2563eb', /* Accent Blue */
+                            500: '#3b82f6',
+                            50: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #002046 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .blob-bg {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-800 antialiased relative overflow-x-hidden">
+
+    <!-- Background Blobs -->
+    <div class="blob-bg bg-blue-300 w-[500px] h-[500px] rounded-full top-[-100px] left-[-100px]"></div>
+    <div class="blob-bg bg-indigo-200 w-[400px] h-[400px] rounded-full top-[20%] right-[-50px]"></div>
+    <div class="blob-bg bg-blue-100 w-[600px] h-[600px] rounded-full bottom-[-100px] left-[20%]"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-maccio-800 rounded flex items-center justify-center">
+                        <span class="text-white font-black text-sm">M</span>
+                    </div>
+                    <span class="font-black text-xl text-maccio-800 tracking-tight">MaccioTEC</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#alcance"
+                        class="text-sm font-semibold text-slate-600 hover:text-maccio-600 transition-colors">Alcance</a>
+                    <a href="#cronograma"
+                        class="text-sm font-semibold text-slate-600 hover:text-maccio-600 transition-colors">Cronograma</a>
+                    <a href="#inversion"
+                        class="text-sm font-semibold text-slate-600 hover:text-maccio-600 transition-colors">Inversión</a>
+                </div>
+                <a href="#inversion"
+                    class="bg-maccio-800 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-maccio-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">Ver
+                    Planes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-semibold text-sm mb-8">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            Propuesta Exclusiva para EleDesign
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight text-maccio-900 mb-6 leading-tight">
+            Sistema de Gestión <br>
+            <span class="gradient-text">Interna Inteligente</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Una solución digital a medida diseñada para centralizar, optimizar y automatizar los procesos operativos,
+            productivos y comerciales de EleDesign.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+            <a href="#alcance"
+                class="bg-white text-maccio-800 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2">
+                Ver Módulos <span class="material-symbols-outlined text-xl">arrow_downward</span>
+            </a>
+            <a href="#inversion"
+                class="bg-maccio-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+                Conocer la Inversión <span class="material-symbols-outlined text-xl">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Alcance Section -->
+    <section id="alcance" class="py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-maccio-600 tracking-widest uppercase mb-2">Alcance del Proyecto</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-maccio-900">Módulos del Sistema</h3>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">El desarrollo contempla la creación de una
+                    Single-Page Application (SPA) responsiva y moderna, que integra 9 módulos funcionales core.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Modulo 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">dashboard</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">1. Dashboard KPI</h4>
+                    <p class="text-slate-600 leading-relaxed">Panel de control principal con métricas en tiempo real,
+                        resumen de producción, alertas de stock e ingresos mensuales.</p>
+                </div>
+                <!-- Modulo 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">group</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">2. Usuarios y Roles</h4>
+                    <p class="text-slate-600 leading-relaxed">Gestión completa de accesos (ABM), asignación de permisos
+                        estructurados por roles (Admin, Supervisor, Operador).</p>
+                </div>
+                <!-- Modulo 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">category</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">3. Catálogo de Materiales</h4>
+                    <p class="text-slate-600 leading-relaxed">Directorio centralizado de materias primas y componentes
+                        con filtros por familias, unidades y precios de referencia.</p>
+                </div>
+                <!-- Modulo 4 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">inventory_2</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">4. Control de Stock</h4>
+                    <p class="text-slate-600 leading-relaxed">Monitorización de niveles de inventario físico, con
+                        alertas visuales automáticas para reposición y stock crítico.</p>
+                </div>
+                <!-- Modulo 5 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">request_quote</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">5. Presupuestos</h4>
+                    <p class="text-slate-600 leading-relaxed">Módulo comercial para la creación, seguimiento y gestión
+                        de estados (Borrador, Enviado, Aprobado, Rechazado) de cotizaciones.</p>
+                </div>
+                <!-- Modulo 6 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">6. Pipeline de Pedidos</h4>
+                    <p class="text-slate-600 leading-relaxed">Visualización del flujo operativo de órdenes al estilo
+                        Kanban, desde el ingreso a producción hasta la entrega final.</p>
+                </div>
+                <!-- Modulo 7 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">architecture</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">7. Archivo Técnico (Planos)</h4>
+                    <p class="text-slate-600 leading-relaxed">Gestor documental para el resguardo y visualización de
+                        archivos técnicos, planos DWG y PDFs asociados a producción.</p>
+                </div>
+                <!-- Modulo 8 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">notifications_active</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">8. Notificaciones</h4>
+                    <p class="text-slate-600 leading-relaxed">Centro de alertas interactivas categorizadas por severidad
+                        para mantener informado al equipo sobre eventos clave.</p>
+                </div>
+                <!-- Modulo 9 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-maccio-600 flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-2xl">analytics</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-maccio-900 mb-3">9. Reportes y Métricas</h4>
+                    <p class="text-slate-600 leading-relaxed">Exportación de datos gerenciales, financieros y operativos
+                        para análisis profundo y toma de decisiones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cronograma Section -->
+    <section id="cronograma" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-sm font-bold text-maccio-600 tracking-widest uppercase mb-2">Tiempos de Entrega</h2>
+            <h3 class="text-3xl md:text-4xl font-black text-maccio-900 mb-10">Cronograma: 1 Mes de Desarrollo</h3>
+
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-12 text-left relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-10"></div>
+
+                <div class="relative border-l-4 border-slate-100 ml-4 space-y-10 py-4">
+                    <!-- Semana 1 -->
+                    <div class="relative pl-8">
+                        <div
+                            class="absolute w-5 h-5 bg-maccio-600 rounded-full -left-[14px] top-1 border-4 border-white shadow">
+                        </div>
+                        <h4 class="text-lg font-bold text-maccio-900">Semana 1: Arquitectura y UI Base</h4>
+                        <p class="text-slate-600 mt-2">Configuración del entorno, aplicación de la identidad visual de
+                            EleDesign, desarrollo del Dashboard y Sistema de Navegación SPA.</p>
+                    </div>
+                    <!-- Semana 2 -->
+                    <div class="relative pl-8">
+                        <div
+                            class="absolute w-5 h-5 bg-maccio-600 rounded-full -left-[14px] top-1 border-4 border-white shadow">
+                        </div>
+                        <h4 class="text-lg font-bold text-maccio-900">Semana 2: Módulos Operativos</h4>
+                        <p class="text-slate-600 mt-2">Desarrollo de los módulos de Materiales, Control de Stock y
+                            Archivo Técnico (Planos).</p>
+                    </div>
+                    <!-- Semana 3 -->
+                    <div class="relative pl-8">
+                        <div
+                            class="absolute w-5 h-5 bg-maccio-600 rounded-full -left-[14px] top-1 border-4 border-white shadow">
+                        </div>
+                        <h4 class="text-lg font-bold text-maccio-900">Semana 3: Módulos Comerciales y Pipeline</h4>
+                        <p class="text-slate-600 mt-2">Implementación de Presupuestos, Pipeline Kanban de Pedidos y
+                            Notificaciones.</p>
+                    </div>
+                    <!-- Semana 4 -->
+                    <div class="relative pl-8">
+                        <div
+                            class="absolute w-5 h-5 bg-maccio-600 rounded-full -left-[14px] top-1 border-4 border-white shadow animate-pulse">
+                        </div>
+                        <h4 class="text-lg font-bold text-maccio-900">Semana 4: Reportes, QA y Despliegue</h4>
+                        <p class="text-slate-600 mt-2">Módulo de Reportes, gestión de Usuarios, pruebas de calidad (QA),
+                            refinamiento visual y entrega/capacitación final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inversion Section -->
+    <section id="inversion" class="py-20 bg-maccio-900 relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-blue-400 tracking-widest uppercase mb-2">Propuesta Comercial</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-white">Alternativas de Inversión</h3>
+                <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">Dos planes estructurados para adaptarse a las
+                    preferencias financieras y operativas de EleDesign.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+                <!-- Plan 1 -->
+                <div
+                    class="bg-white rounded-3xl p-8 lg:p-10 relative flex flex-col shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold text-maccio-900 mb-2">Opción 1: Propiedad Total</h4>
+                        <p class="text-sm text-slate-500">Ideal si cuentas con infraestructura propia y equipo técnico
+                            interno.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-5xl font-black text-maccio-900">$3,500</span>
+                        <span class="text-slate-500 font-semibold">USD</span>
+                        <p class="text-xs text-slate-500 mt-2 uppercase tracking-wide font-bold">50% Inicial / 50% al
+                            finalizar</p>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <span class="text-slate-700 font-medium">Desarrollo de todos los 9 módulos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <span class="text-slate-700 font-medium"><strong>Entrega del código fuente
+                                    completo</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <span class="text-slate-700 font-medium">1 mes de garantía para cambios y correcciones
+                                post-entrega</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <span class="text-slate-700 font-medium">Instalación inicial en servidores del
+                                cliente</span>
+                        </li>
+                        <li class="flex items-start gap-3 opacity-60">
+                            <span class="material-symbols-outlined text-slate-400 mt-0.5">cancel</span>
+                            <span class="text-slate-500">Mantenimiento y Hosting (Queda a cargo del cliente)</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:contacto@macciotec.com?subject=Opción 1 - Sistema EleDesign"
+                        class="w-full block text-center bg-maccio-800 text-white py-4 rounded-xl font-bold hover:bg-maccio-900 transition-colors">Seleccionar
+                        Opción 1</a>
+                </div>
+
+                <!-- Plan 2 -->
+                <div
+                    class="bg-gradient-to-b from-maccio-600 to-maccio-800 rounded-3xl p-8 lg:p-10 relative flex flex-col shadow-2xl hover:-translate-y-2 transition-transform duration-300 border border-blue-400/30">
+                    <div class="absolute top-0 right-8 transform -translate-y-1/2">
+                        <span
+                            class="bg-gradient-to-r from-amber-400 to-orange-500 text-white text-xs font-black uppercase tracking-widest py-1.5 px-4 rounded-full shadow-lg">Más
+                            Elegido</span>
+                    </div>
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold text-white mb-2">Opción 2: SaaS MaccioTEC</h4>
+                        <p class="text-sm text-blue-100">Despreocúpate de la infraestructura. Nosotros lo mantenemos
+                            operativo 24/7.</p>
+                    </div>
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-5xl font-black text-white">$1,500</span>
+                            <span class="text-blue-200 font-semibold">USD</span>
+                            <span
+                                class="text-white font-bold ml-2 text-sm bg-blue-500/30 px-2 py-1 rounded">Setup</span>
+                        </div>
+                        <p class="text-xs text-blue-200 mt-2 uppercase tracking-wide font-bold">50% Inicial / 50% al
+                            finalizar</p>
+
+                        <div class="mt-4 pt-4 border-t border-blue-400/30 flex items-baseline gap-2">
+                            <span class="text-3xl font-black text-white">+$150</span>
+                            <span class="text-blue-200 font-semibold">USD / Mes</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-blue-300 mt-0.5">check_circle</span>
+                            <span class="text-white font-medium">Desarrollo de todos los 9 módulos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-blue-300 mt-0.5">check_circle</span>
+                            <span class="text-white font-medium"><strong>Hosting Premium en servidores de
+                                    MaccioTEC</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-blue-300 mt-0.5">check_circle</span>
+                            <span class="text-white font-medium">Mantenimiento continuo y backups automáticos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-blue-300 mt-0.5">check_circle</span>
+                            <span class="text-white font-medium">Soporte técnico directo dentro del alcance del
+                                producto</span>
+                        </li>
+                        <li class="flex items-start gap-3 opacity-80">
+                            <span class="material-symbols-outlined text-blue-300 mt-0.5">info</span>
+                            <span class="text-blue-100 text-sm">El software opera bajo licencia de uso mientras la
+                                suscripción esté activa.</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:contacto@macciotec.com?subject=Opción 2 - Sistema EleDesign"
+                        class="w-full block text-center bg-white text-maccio-800 py-4 rounded-xl font-bold hover:bg-slate-50 transition-colors shadow-lg">Seleccionar
+                        Opción 2</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services & Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Otros Servicios -->
+                <div class="bg-blue-50 border border-blue-100 rounded-3xl p-8 lg:p-10">
+                    <div class="w-12 h-12 bg-maccio-600 rounded-xl flex items-center justify-center mb-6 text-white shadow-sm">
+                        <span class="material-symbols-outlined text-2xl">rocket_launch</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-maccio-900 mb-4">Impulsa tu Presencia Digital</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        En MaccioTEC no solo desarrollamos software a medida, también ofrecemos servicios integrales para escalar tu negocio en el entorno digital:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="material-symbols-outlined text-maccio-600">campaign</span>
+                            Community Manager & Gestión de Redes
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="material-symbols-outlined text-maccio-600">smart_toy</span>
+                            Desarrollo de Chatbots con Inteligencia Artificial
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="material-symbols-outlined text-maccio-600">trending_up</span>
+                            Estrategias de Marketing Digital
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto WhatsApp -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 lg:p-10 shadow-sm flex flex-col justify-center">
+                    <h3 class="text-2xl font-black text-maccio-900 mb-4">¿Hablamos sobre el proyecto?</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Estamos a tu entera disposición para resolver cualquier duda sobre la propuesta o coordinar los siguientes pasos. Contáctanos directamente vía WhatsApp:
+                    </p>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/5493874624579?text=Hola%20Franco,%20me%20gustaría%20hablar%20sobre%20la%20propuesta%20de%20EleDesign" target="_blank" class="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined">chat</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-maccio-900">Franco Maccio</p>
+                                    <p class="text-xs text-slate-500 font-medium">+54 9 3874 62-4579</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-slate-400 group-hover:text-emerald-500">arrow_forward</span>
+                        </a>
+
+                        <a href="https://wa.me/5493875712779?text=Hola%20Martin,%20me%20gustaría%20hablar%20sobre%20la%20propuesta%20de%20EleDesign" target="_blank" class="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined">chat</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-maccio-900">Martin Maccio</p>
+                                    <p class="text-xs text-slate-500 font-medium">+54 9 3875 71-2779</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-slate-400 group-hover:text-emerald-500">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6">
+            <div class="w-10 h-10 bg-maccio-800 rounded-lg flex items-center justify-center">
+                <span class="text-white font-black text-lg">M</span>
+            </div>
+            <span class="font-black text-2xl text-maccio-800 tracking-tight">MaccioTEC</span>
+        </div>
+        <p class="text-slate-500 font-medium mb-2">Transformando la gestión operativa de empresas modernas.</p>
+        <p class="text-sm text-slate-400">© 2026 MaccioTEC. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
